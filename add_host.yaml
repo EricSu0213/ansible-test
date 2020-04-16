@@ -1,0 +1,17 @@
+---
+- hosts: 10.1.100.60
+  remote_user: root
+
+  tasks:
+  - name: edit /etc/hosts
+    blockinfile:
+      path: /etc/hosts
+      block: |
+        # [NTP Server]
+        10.95.20.10     cathaygtsm1
+        192.168.100.41  cathaygtsm1_192
+        192.168.100.49  cathaygtsm2
+        10.87.50.100    cathaygtsm2_50
+        # [Mail Server]
+        202.154.192.72  cathaylife.com.tw sendmail.cathaylife.com.tw #for OP
+        202.154.200.150 cathayconsult.com.tw cathlife.com.tw
