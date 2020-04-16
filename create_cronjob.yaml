@@ -1,0 +1,12 @@
+---
+- hosts: 10.1.100.60
+  remote_user: root
+
+  tasks:
+  - name: create cron job
+    cron:
+      name: Hello cron job
+      minute: "30"
+      hour: "2"
+      weekday: "0-6"
+      job: ls -rtl
